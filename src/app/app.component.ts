@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
+import {RouterLink, RouterOutlet} from '@angular/router';
+import {connectRouter} from './connect-router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink,
+    RouterOutlet
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'mfe2';
+  constructor() {
+    connectRouter();
+  }
 }
-
-export default AppComponent;
